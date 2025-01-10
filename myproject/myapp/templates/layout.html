@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Management System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}"><i class="fa-solid fa-graduation-cap fa-lg"></i>
+            Lopues  Jaena Student Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">
+                    <i class="fa-solid fa-list fa-lg"></i>
+                        All Students</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'add' %}">
+                    <i class="fa-solid fa-plus" fa-lg></i>
+                    Add Student</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    
+    <main class="flex-grow-1">
+        <div class="container-fluid">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="mt-auto mb-4 text-center">
+        <div>
+            <span>
+                Copyright &copy; <script>document.write(new Date().getFullYear())</script> Lopues Jaena Elementary School
+            </span>
+            <a href="https://www.google.com/maps/place/Lopez+Jaena+Elementary+School/@10.5688478,123.0763318,3a,75y/data=!3m8!1e2!3m6!1sAF1QipPYrRwr-fSLeX2LNK_XnfRSmcHTEymNXMSs2sFX!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPYrRwr-fSLeX2LNK_XnfRSmcHTEymNXMSs2sFX%3Dw114-h86-k-no!7i4032!8i3024!4m7!3m6!1s0x33aecccb88c7a969:0xdcbcb2ca2aaa9624!8m2!3d10.5688478!4d123.0763318!10e5!16s%2Fg%2F11xdv19lz?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="ms-2">
+                <i class="fa-solid fa-map-marker-alt fa-lg"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+
