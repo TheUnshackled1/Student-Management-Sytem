@@ -1,20 +1,14 @@
 from django import forms
 from .models import Student
-<<<<<<< HEAD
-=======
 from django.core.exceptions import ValidationError 
 
 
->>>>>>> test
 
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
-<<<<<<< HEAD
         fields =  ['student_number', 'first_name', 'last_name', 'subject','grade_year', 'grade']
-=======
         fields = ['student_number', 'first_name', 'last_name', 'subject', 'grade_year', 'grade']
->>>>>>> test
         labels = {
             'student_number': 'Student Number', 
             'first_name': 'First Name', 
@@ -30,10 +24,8 @@ class StudentForm(forms.ModelForm):
             'subject': forms.TextInput(attrs={'class': 'form-control'}),
             'grade_year': forms.TextInput(attrs={'class': 'form-control'}), 
             'grade': forms.NumberInput(attrs={'class': 'form-control'})
-<<<<<<< HEAD
 }
-=======
-        }
+
     
     def clean_student_number(self):
         student_number = self.cleaned_data['student_number']
@@ -51,5 +43,4 @@ class StudentForm(forms.ModelForm):
         if grade_year < 1 or grade_year > 6:
             raise ValidationError('Grade Year must be between 1 and 6.') 
         return grade_year
->>>>>>> test
 
