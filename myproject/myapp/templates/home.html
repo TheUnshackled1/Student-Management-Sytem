@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
+    <div class="text-center">
+        <h3 class="m-20 ms-20"></h3> 
+        <h1 style="color: white;">Welcome to Lopues Jaena Elementary School</h1>
+        <p class="text-center" style="color: black;">Check Grades? </p>
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'index' %}" ><button type="button" class="btn btn-danger btn-lg">Click Here</button>
+            </a>
+        </div>
+    </div>
+</div>
+        
+{% endblock %}

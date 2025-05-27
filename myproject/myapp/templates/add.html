@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body  %}
+<h3 class="tex-center m-4"  style="color: white;">Add Student</h3>
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"style="color: red;">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+    {% if success %}
+    <div class="alert alert-success" role="alert">
+        The new Student added Successfully! 🥰
+        <a href="{% url 'index' %}" class="alert-link">Go Back.</a>
+    </div>
+    {% else %}
+    <div class="row justify-content-center">
+        <div class="col-6"><div class="card text-white bg-warning mb-3">
+            <div class="card-header"><i class="fa-solid fa-address-card" fa-lg>Student Register</i></div>
+            <div class="card-body">
+                <form action="{% url 'add' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Add</button>
+                    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div></div>
+    </div>
+    {% endif %}
+{% endblock  %}
