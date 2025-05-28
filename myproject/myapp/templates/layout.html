@@ -9,7 +9,7 @@
     <style>
         body {
             position: relative;
-            background-image: url("{% static 'images/99b5087e9b58f1bfd2373531a20eb889.jpg' %}");
+            background-image: url("{% static 'images/we.jpg' %}");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -18,32 +18,51 @@
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <i class="fa-solid fa-graduation-cap fa-lg"></i> Lopues Jaena Elementary School
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}">
-                            <i class="fa-solid fa-list fa-lg"></i> All Students
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add' %}">
-                            <i class="fa-solid fa-plus fa-lg"></i> Add Student
-                        </a>
-                    </li>
+{% if user.is_authenticated %}
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <i class="fa-solid fa-graduation-cap fa-lg"></i> Lopues Jaena Elementary School
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-list fa-lg"></i> All Students
+                    </a>
+                    
+                </li>
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add' %}">
+                        <i class="fa-solid fa-plus fa-lg"></i> Add Student
+                    </a>
+                </li>
+            </ul>
+                {% endif %}
+                <!-- Right side: login/signup/logout -->
+                <ul class="navbar-nav ms-auto">
+                        <li class="nav-item d-flex align-items-center me-2 text-white">
+                            Hi, {{ user.username }}
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">
+                                <i class="fa-solid fa-right-from-bracket"></i> Logout
+                            </a>
+                        </li>
+        </div>
+    </div>
+</nav>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow-1">
+    <main class="flex-grow-1">  
         <div class="container-fluid">
             {% block body %}
             {% endblock %}

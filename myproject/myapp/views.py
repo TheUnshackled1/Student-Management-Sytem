@@ -105,3 +105,31 @@ def login(request):
             return render(request, 'login.html')
 
     return render(request, 'login.html')
+
+from django.contrib.auth.models import User
+
+def signup(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+
+        if password1 != password2:
+            messages.error(request, "Passwords do not match.")
+            return render(request, 'signup.html')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already taken.")
+            return render(request, 'signup.html')
+
+        user = User.objects.create_user(username=username, password=password1)
+        user.save()
+        messages.success(request, "Account created successfully. You can now log in.")
+        return redirect('login')
+
+    return render(request, 'signup.html')
+
+def logout(request):
+    auth_logout(request)
+    messages.success(request, "You have been logged out.")
+    return redirect('login')

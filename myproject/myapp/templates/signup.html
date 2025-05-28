@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4 p-4 bg-light rounded shadow">
+        <h3 class="mb-3">Signup</h3>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password" name="password1" id="password1" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password2" class="form-label">Confirm Password</label>
+                <input type="password" name="password2" id="password2" class="form-control" required>
+            </div>
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary w-100">Signup</button>
+        </form>
+        <div class="text-center mt-3">
+            <small>Already have an account?</small><br>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary mt-1 w-100">Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
