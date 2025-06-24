@@ -1,5 +1,7 @@
 # LopuesJaena Student Management System
-
+![image](https://github.com/user-attachments/assets/aca09ed4-737c-454d-90b6-f7a352df233c)
+![image](https://github.com/user-attachments/assets/624707b6-b6f5-48f5-9749-9838197d79be)
+![image](https://github.com/user-attachments/assets/d3de78dd-469b-4d2d-b500-2e060076de1e)
 The LopuesJaena Student Management System is a Django-based web application designed to manage student records efficiently. It allows users to create, read, update, and delete student information (CRUD), including details such as student number, name, subject, grade year, and grade.
 ## Features
 
