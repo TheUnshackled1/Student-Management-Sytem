@@ -26,27 +26,27 @@ Virtual Environment → recommended for isolating dependencies
 
 Clone or download the project
 
-git clone https://github.com/YourRepo/Student-Management-System.git
+1.git clone https://github.com/YourRepo/Student-Management-System.git
 cd Student-Management-System
 
-Create a virtual environment
+2.Create a virtual environment
 
 python -m venv .venv
 
 
-Activate the virtual environment
+3.Activate the virtual environment
 
-On Windows (PowerShell):
+-On Windows (PowerShell):
 
 .venv\Scripts\activate
 
 
-On Linux / Mac:
+-On Linux / Mac:
 
 source .venv/bin/activate
 
 
-Install dependencies
+4.Install dependencies
 Use the requirements file you generated:
 
 pip install -r requirements.txt
@@ -57,17 +57,17 @@ pip install -r requirements.txt
 pip freeze > requirements.txt
 
 
-Apply database migrations
+5.Apply database migrations
 
 python manage.py migrate
 
 
-Run the development server
+6.Run the development server
 
 python manage.py runserver
 
 
-Open the app in your browser
+7.Open the app in your browser
 
 Local: http://127.0.0.1:8000/
 
