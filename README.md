@@ -13,36 +13,66 @@ The LopuesJaena Student Management System is a Django-based web application desi
 
 ## Prerequisites
 
-To run this program you must follow these instructions 😊:
+🚀 How to Run the Project
+✅ Prerequisites
 
-* **Python 3.x**: Ensure Python is installed on your system. [Download Python](https://www.python.org/downloads/)
-* **Django**: The web framework used for this project. Install via pip if not already installed:
-  ```bash
-  pip install django
-  ```
-## How to Run the Project
+Python 3.x installed → Download Python
 
-1. **Activate the virtual environment**
-   Open your command line and run:
-   ```bash
-   .venv\Scripts\activate
-   ```
-2. **Install Django (if not yet installed)**
-   ```bash
-   pip install django
-   ```
+pip (Python package installer) → included with Python 3.x
 
-3. **Navigate to the project folder**
-   ```bash
-   cd myproject
-   ```
-4. **Run the Django development server**
-   ```bash
-   python manage.py runserver
-   ```
-5. **Open the app in your browser**
-   Go to:
-   ```
-   http://127.0.0.1:8000/
-   ```
-Enjoy using the LopuesJaena Student Management System!
+Virtual Environment → recommended for isolating dependencies
+
+🔧 Setup Instructions
+
+Clone or download the project
+
+git clone https://github.com/YourRepo/Student-Management-System.git
+cd Student-Management-System
+
+Create a virtual environment
+
+python -m venv .venv
+
+
+Activate the virtual environment
+
+On Windows (PowerShell):
+
+.venv\Scripts\activate
+
+
+On Linux / Mac:
+
+source .venv/bin/activate
+
+
+Install dependencies
+Use the requirements file you generated:
+
+pip install -r requirements.txt
+
+
+⚡ If you don’t have requirements.txt yet, create it with:
+
+pip freeze > requirements.txt
+
+
+Apply database migrations
+
+python manage.py migrate
+
+
+Run the development server
+
+python manage.py runserver
+
+
+Open the app in your browser
+
+Local: http://127.0.0.1:8000/
+
+Deployed (PythonAnywhere): https://tyroneljms.pythonanywhere.com/
+
+🎉 Enjoy
+
+You’re all set! Login and start using the LopuesJaena Student Management System 🚀
